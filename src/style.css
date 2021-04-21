@@ -79,9 +79,11 @@ h6 {
 }
 
 img {
-    margin-top: 8vh;
+    margin: 8vh auto;
     max-width: 90vw;
     box-shadow: 0 0 5vh orangered;
+    align-self: center;
+    justify-self: center;
 }
 
 h3 {
