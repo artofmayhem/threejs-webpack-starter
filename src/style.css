@@ -7,14 +7,88 @@
 html,
 body
 {
-    height: 100vh;
-    font-family: 'Poppins';
+    font-family: Poppins;
+    height: 300vh;
+    background-image: url("../assets/advanced.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*background: linear-gradient(*/
+    /*0.25turn,*/
+    /*#222,*/
+    /*#444,*/
+    /*#999,*/
+    /*#ccc,*/
+    /*#fff*/
+    /*);*/
 }
 
-.webgl
-{
-    position: fixed;
+body {
+    overflow-x: hidden;
+    color: white
+}
+
+.webgl {
+    position: center;
     top: 0;
     left: 0;
     outline: none;
+}
+
+.container {
+    position: absolute;
+    height: 100vh;
+    place-items: center;
+    display: grid;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 40vh;
+    text-align: center;
+}
+
+h1 {
+    font-family: Idlewild A, Idlewild B, Arial, Courier New;
+    font-size: 15vh;
+    text-transform: uppercase;
+    color: white;
+}
+
+h4 {
+    font-family: "Malgun Gothic";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 5vh;
+    text-transform: uppercase;
+    color: white;
+    padding-top: 20vh
+}
+
+h6 {
+    font-family: "Malgun Gothic";
+    font-style: normal;
+    font-weight: 200;
+    font-size: 3vh;
+    text-transform: uppercase;
+    color: white;
+    margin-top: 10vh;
+    padding: 10vh 5vw;
+    background-color: #222;
+    opacity: 0.8;
+    text-shadow: 0 0 2vh black;
+}
+
+img {
+    margin-top: 8vh;
+    max-width: 90vw;
+    box-shadow: 0 0 5vh orangered;
+}
+
+h3 {
+    margin-top: 50vh;
+    font-family: "Malgun Gothic";
+    font-style: normal;
+    font-weight: 200;
+    text-shadow: 0 0 5vh #FFF;
+
 }
