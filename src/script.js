@@ -1,14 +1,14 @@
 import './style.css'
 import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import * as dat from 'dat.gui'
+//import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+//import * as dat from 'dat.gui'
 
 //loading
 const textureLoader = new THREE.TextureLoader()
 const normalTexture = textureLoader.load('/textures/normalmap.png')
 
 // Debug this allows you to position things
-const gui = new dat.GUI()
+//const gui = new dat.GUI()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
@@ -38,21 +38,21 @@ const pointLight = new THREE.PointLight(0xff0000, 2)
 pointLight.position.set(9.19, -10.47, 5.79)
 pointLight.intensity = 1.5
 scene.add(pointLight)
-const light1 = gui.addFolder('Red')
-
-light1.add(pointLight.position, 'y').min(-11).max(11).step(0.01)
-light1.add(pointLight.position, 'x').min(-11).max(11).step(0.01)
-light1.add(pointLight.position, 'z').min(-11).max(11).step(0.01)
-light1.add(pointLight, 'intensity').min(0).max(10).step(0.01)
-
-const light1Color = {
-    color: 0xff0000
-}
-
-light1.addColor(light1Color, 'color')
-    .onChange(() => {
-        pointLight.color.set(light1Color.color)
-    })
+// const light1 = gui.addFolder('Red')
+//
+// light1.add(pointLight.position, 'y').min(-11).max(11).step(0.01)
+// light1.add(pointLight.position, 'x').min(-11).max(11).step(0.01)
+// light1.add(pointLight.position, 'z').min(-11).max(11).step(0.01)
+// light1.add(pointLight, 'intensity').min(0).max(10).step(0.01)
+//
+// const light1Color = {
+//     color: 0xff0000
+// }
+//
+// light1.addColor(light1Color, 'color')
+//     .onChange(() => {
+//         pointLight.color.set(light1Color.color)
+//     })
 
 // const pointLightHelper = new THREE.PointLightHelper(pointLight, 1)
 // scene.add(pointLightHelper)
@@ -62,21 +62,21 @@ const pointLight2 = new THREE.PointLight(0x2522CA, 2)
 pointLight2.position.set(2,3,8.7)
 pointLight2.intensity = 1.5
 scene.add(pointLight2)
-const light2 = gui.addFolder('Blue')
+// const light2 = gui.addFolder('Blue')
 
-light2.add(pointLight2.position, 'y').min(-11).max(11).step(0.01)
-light2.add(pointLight2.position, 'x').min(-11).max(11).step(0.01)
-light2.add(pointLight2.position, 'z').min(-11).max(11).step(0.01)
-light2.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
-
-const light2Color = {
-    color: 0xff0000
-}
-
-light2.addColor(light2Color, 'color')
-    .onChange(() => {
-        pointLight2.color.set(light2Color.color)
-    })
+// light2.add(pointLight2.position, 'y').min(-11).max(11).step(0.01)
+// light2.add(pointLight2.position, 'x').min(-11).max(11).step(0.01)
+// light2.add(pointLight2.position, 'z').min(-11).max(11).step(0.01)
+// light2.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
+//
+// const light2Color = {
+//     color: 0xff0000
+// }
+//
+// light2.addColor(light2Color, 'color')
+//     .onChange(() => {
+//         pointLight2.color.set(light2Color.color)
+//     })
 
 // const pointLightHelper2 = new THREE.PointLightHelper(pointLight2, 1)
 // scene.add(pointLightHelper2)
@@ -86,21 +86,21 @@ const pointLight3 = new THREE.PointLight(0xffffff, 2)
 pointLight3.position.set(-2, 3, 11)
 pointLight3.intensity = .5
 scene.add(pointLight3)
-const light3 = gui.addFolder('White')
-
-light3.add(pointLight3.position, 'y').min(-11).max(11).step(0.01)
-light3.add(pointLight3.position, 'x').min(-11).max(11).step(0.01)
-light3.add(pointLight3.position, 'z').min(-11).max(11).step(0.01)
-light3.add(pointLight3, 'intensity').min(0).max(10).step(0.01)
-
-const light3Color = {
-    color: 0xff0000
-}
-
-light3.addColor(light3Color, 'color')
-    .onChange(() => {
-        pointLight3.color.set(light3Color.color)
-    })
+// const light3 = gui.addFolder('White')
+//
+// light3.add(pointLight3.position, 'y').min(-11).max(11).step(0.01)
+// light3.add(pointLight3.position, 'x').min(-11).max(11).step(0.01)
+// light3.add(pointLight3.position, 'z').min(-11).max(11).step(0.01)
+// light3.add(pointLight3, 'intensity').min(0).max(10).step(0.01)
+//
+// const light3Color = {
+//     color: 0xff0000
+// }
+//
+// light3.addColor(light3Color, 'color')
+//     .onChange(() => {
+//         pointLight3.color.set(light3Color.color)
+//     })
 
 
 
@@ -173,24 +173,24 @@ function onDocumentMouseMove(e)  {
     mouseX = (e.clientX - windowHalfX)
     mouseY = (e.clientY - windowHalfY)
 }
-const updateSphere =(e) => {
-sphere.position.y = window.scrollY * 0.003
+const updateSphere =() => {
+sphere.position.y = window.scrollY * 0.001
 }
 window.addEventListener('scroll', updateSphere)
 
 
-const clock = new THREE.Clock()
+//const clock = new THREE.Clock()
 
 const tick = () =>
 {
     targetX = mouseX * 0.001
     targetY = mouseY * 0.001
-    const elapsedTime = clock.getElapsedTime()
+    //const elapsedTime = clock.getElapsedTime()
 
     // Update objects
     sphere.rotation.x =  0.05 * (targetY - sphere.rotation.x)
     sphere.rotation.y += 0.05 * (targetX - sphere.rotation.y)
-    sphere.rotation.z =  -0.4 * elapsedTime
+    sphere.position.z +=  -0.5 * (targetY * 0.05 - sphere.rotation.z)
 
     // Update Orbital Controls
     // controls.update()
