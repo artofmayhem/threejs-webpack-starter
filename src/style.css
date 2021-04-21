@@ -45,7 +45,7 @@ body {
     justify-content: center;
     padding-top: 40vh;
     text-align: center;
-    align-self: center;
+    margin: 0 auto;
 }
 
 h1 {
