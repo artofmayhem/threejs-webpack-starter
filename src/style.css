@@ -8,7 +8,7 @@ html,
 body
 {
     font-family: Poppins;
-    height: 300vh;
+    height: 350vh;
     background-image: url("../assets/advanced.jpg");
     background-position: center center;
     background-size: cover;
@@ -48,7 +48,7 @@ body {
     justify-content: center;
     padding-top: 40vh;
     text-align: center;
-    margin: 0 auto;
+    margin: 10vw 5vw
 }
 
 h1 {
