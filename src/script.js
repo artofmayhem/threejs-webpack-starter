@@ -190,7 +190,7 @@ const tick = () =>
     // Update objects
     sphere.rotation.x =  0.05 * (targetY - sphere.rotation.x)
     sphere.rotation.y += 0.05 * (targetX - sphere.rotation.y)
-    sphere.rotation.z =  1 * (targetY * 0.05 - sphere.rotation.z)
+    sphere.rotation.z +=  1 * (targetY * 0.05 - sphere.rotation.z)
 
     // Update Orbital Controls
     // controls.update()
