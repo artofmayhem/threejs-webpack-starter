@@ -5,7 +5,7 @@ import * as dat from 'dat.gui'
 
 //loading
 const textureLoader = new THREE.TextureLoader()
-const normalTexture = textureLoader.load('/textures/normalmap.png')
+const normalTexture = textureLoader.load('/textures/texture3.png')
 
 // Debug this allows you to position things
 const gui = new dat.GUI()
@@ -17,14 +17,14 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Objects
-const geometry = new THREE.SphereBufferGeometry( .7, 7,  3 );
+const geometry = new THREE.SphereBufferGeometry( 0.7, 64,  64 );
 
 
 // Materials
 
 const material = new THREE.MeshStandardMaterial()
 material.metalness = 0.7
-material.roughness = 0.2
+material.roughness = 0.1
 material.normalMap = normalTexture;
 material.color = new THREE.Color(0x444444)
 
@@ -60,7 +60,7 @@ light1.addColor(light1Color, 'color')
 //light 2
 const pointLight2 = new THREE.PointLight(0x2522CA, 2)
 pointLight2.position.set(2,3,8.7)
-pointLight2.intensity = 1.5
+pointLight2.intensity = 5
 scene.add(pointLight2)
 const light2 = gui.addFolder('Blue')
 
@@ -84,7 +84,7 @@ light2.addColor(light2Color, 'color')
 //light 3
 const pointLight3 = new THREE.PointLight(0xffffff, 2)
 pointLight3.position.set(-2, 3, 11)
-pointLight3.intensity = .5
+pointLight3.intensity = 1.5
 scene.add(pointLight3)
 const light3 = gui.addFolder('White')
 
@@ -179,18 +179,18 @@ sphere.position.y = window.scrollY * 0.005
 window.addEventListener('scroll', updateSphere)
 
 
-//const clock = new THREE.Clock()
+const clock = new THREE.Clock()
 
 const tick = () =>
 {
     targetX = mouseX * 0.001
     targetY = mouseY * 0.001
-    //const elapsedTime = clock.getElapsedTime()
+    const elapsedTime = clock.getElapsedTime()
 
     // Update objects
     sphere.rotation.x =  0.05 * (targetY - sphere.rotation.x)
     sphere.rotation.y += 0.05 * (targetX - sphere.rotation.y)
-    sphere.rotation.z +=  1 * (targetY * 0.05 - sphere.rotation.z)
+    sphere.rotation.z = -0.5 * elapsedTime
 
     // Update Orbital Controls
     // controls.update()

@@ -1,100 +1,113 @@
-*
-{
-    margin: 0;
-    padding: 0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
 html,
-body
-{
-    font-family: Poppins;
-    height: 350vh;
-    background-image: url("../assets/advanced.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    /*background: linear-gradient(*/
-    /*0.25turn,*/
-    /*#222,*/
-    /*#444,*/
-    /*#999,*/
-    /*#ccc,*/
-    /*#fff*/
-    /*);*/
+body {
+  font-family: Poppins;
+
+  background-image: url("../assets/advanced.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /*background: linear-gradient(*/
+  /*0.25turn,*/
+  /*#222,*/
+  /*#444,*/
+  /*#999,*/
+  /*#ccc,*/
+  /*#fff*/
+  /*);*/
 }
 
 body {
-    overflow-x: hidden;
-    color: white;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
+  height: 400vh;
+  width: 100vw;
+  overflow-x: hidden;
+  color: white;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
 }
 
 .webgl {
-    position: center;
-    top: 0;
-    left: 0;
-    outline: none;
+  position: center;
+  top: 0;
+  left: 0;
+  outline: none;
 }
 
-.container {
-    position: absolute;
-    height: 100vh;
-    place-items: center;
-    display: grid;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 40vh;
-    text-align: center;
-    margin: 10vw 5vw
+.container2 {
+  position: absolute;
+  height: 200vh;
+  place-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 40vh;
+  text-align: center;
+  margin: 10vw auto;
 }
 
 h1 {
-    font-family: Idlewild A, Idlewild B, Arial, Courier New;
-    font-size: 15vh;
-    text-transform: uppercase;
-    color: white;
-}
-
-h4 {
-    font-family: "Malgun Gothic";
-    font-style: normal;
-    font-weight: 200;
-    font-size: 5vh;
-    text-transform: uppercase;
-    color: white;
-    padding-top: 20vh
-}
-
-h6 {
-    font-family: "Malgun Gothic";
-    font-style: normal;
-    font-weight: 200;
-    font-size: 3vh;
-    text-transform: uppercase;
-    color: white;
-    margin-top: 10vh;
-    padding: 10vh 5vw;
-    background-color: #222;
-    opacity: 0.8;
-    text-shadow: 0 0 2vh black;
-}
-
-img {
-    margin: 8vh auto;
-    width: 90vw;
-    box-shadow: 0 0 5vh orangered;
-    align-self: center;
-    justify-self: center;
+  font-family: "Idlewild A", "Idlewild B";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 15vh;
+  text-transform: uppercase;
+  color: white;
+  align-self: center;
 }
 
 h3 {
-    margin-top: 50vh;
-    font-family: "Malgun Gothic";
-    font-style: normal;
-    font-weight: 200;
-    text-shadow: 0 0 5vh #FFF;
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 5vh;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 20vh;
+  align-self: center;
+}
 
+h4 {
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 5vh;
+  text-transform: uppercase;
+  color: white;
+  padding-top: 20vh;
+  align-self: center;
+}
+
+h6 {
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 200;
+  font-size: 5vh;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 10vh;
+  padding: 10vh 5vw;
+  background-color: #222;
+  opacity: 0.8;
+  text-shadow: 0 0 2vh black;
+}
+
+img {
+  margin: 8vh auto;
+  width: 80vw;
+  box-shadow: 0 0 5vh orangered;
+  align-self: center;
+  justify-self: center;
+}
+
+h3 {
+  margin-top: 50vh;
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 200;
+  text-shadow: 0 0 5vh #fff;
 }
