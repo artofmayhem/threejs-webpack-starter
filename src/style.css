@@ -2,15 +2,18 @@
   margin: 0;
   padding: 0;
   overflow-y: hidden;
+
 }
 
 html,
 body {
   font-family: Poppins;
-  background-image: url('../static/textures/3d-bg2.jpg');
+  background-image: url('../assets/sunset.jpg');
   background-position: top center;
   background-size: contain;
   background-repeat: no-repeat;
+  background-color: black;
+
   /*background: linear-gradient(*/
   /*0.25turn,*/
   /*#222,*/

@@ -17,16 +17,16 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Objects
-const geometry = new THREE.BoxGeometry( 2, 1, 2 );
+const geometry = new THREE.BoxGeometry( 2.5, 1.25, .01 );
 
 
 // Materials
 
 const material = new THREE.MeshStandardMaterial()
 material.metalness = 0.7
-material.roughness = 0.1
+material.roughness = 0.4
 material.normalMap = normalTexture;
-material.color = new THREE.Color(0xffffff)
+material.color = new THREE.Color(0x444444)
 
 // Mesh
 const sphere = new THREE.Mesh(geometry, material)
@@ -34,7 +34,7 @@ scene.add(sphere)
 
 // Lights
 
-const pointLight = new THREE.PointLight(0xff0000, 2)
+const pointLight = new THREE.PointLight(0x800080, 2)
 pointLight.position.set(9.19, -10.47, 5.79)
 pointLight.intensity = 1.5
 scene.add(pointLight)
@@ -46,7 +46,7 @@ light1.add(pointLight.position, 'z').min(-11).max(11).step(0.01)
 light1.add(pointLight, 'intensity').min(0).max(10).step(0.01)
 
 const light1Color = {
-    color: 0xff0000
+    color: 0x800880,
 }
 
 light1.addColor(light1Color, 'color')
@@ -58,7 +58,7 @@ light1.addColor(light1Color, 'color')
 // scene.add(pointLightHelper)
 
 //light 2
-const pointLight2 = new THREE.PointLight(0x2522CA, 2)
+const pointLight2 = new THREE.PointLight(0x800080, 2)
 pointLight2.position.set(2,3,8.7)
 pointLight2.intensity = 5
 scene.add(pointLight2)
@@ -70,7 +70,7 @@ light2.add(pointLight2.position, 'z').min(-11).max(11).step(0.01)
 light2.add(pointLight2, 'intensity').min(0).max(10).step(0.01)
 
 const light2Color = {
-    color: 0xff0000
+    color: 0x800080
 }
 
 light2.addColor(light2Color, 'color')
@@ -82,7 +82,7 @@ light2.addColor(light2Color, 'color')
 // scene.add(pointLightHelper2)
 
 //light 3
-const pointLight3 = new THREE.PointLight(0xffffff, 2)
+const pointLight3 = new THREE.PointLight(0xef0000, 2)
 pointLight3.position.set(-2, 3, 11)
 pointLight3.intensity = 1.5
 scene.add(pointLight3)
@@ -94,7 +94,7 @@ light3.add(pointLight3.position, 'z').min(-11).max(11).step(0.01)
 light3.add(pointLight3, 'intensity').min(0).max(10).step(0.01)
 
 const light3Color = {
-    color: 0xff0000
+    color: 0xef0000
 }
 
 light3.addColor(light3Color, 'color')
@@ -138,8 +138,8 @@ window.addEventListener('resize', () =>
 // Base camera
 const camera = new THREE.PerspectiveCamera(100, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
-camera.position.y = 0
-camera.position.z = 2
+camera.position.y = -1.5
+camera.position.z = 2.5
 scene.add(camera)
 
 // Controls
@@ -188,9 +188,9 @@ const tick = () =>
     const elapsedTime = clock.getElapsedTime()
 
     // Update objects
-    sphere.rotation.x =  0.05 * (targetY - sphere.rotation.x)
-    sphere.rotation.y += 0.05 * (targetX - sphere.rotation.y)
-    sphere.rotation.z = -0.5 * elapsedTime
+    sphere.rotation.x +=  1 * (targetY - sphere.rotation.x)
+    sphere.rotation.y += 1 * (targetX - sphere.rotation.y)
+    // sphere.rotation.z = -0.002 * elapsedTime
 
     // Update Orbital Controls
     // controls.update()
