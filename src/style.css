@@ -1,15 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
 
 html,
 body {
   font-family: Poppins;
-
-  background-image: url("../assets/advanced.jpg");
-  background-position: center center;
-  background-size: cover;
+  background-image: url('../static/textures/3d-bg2.jpg');
+  background-position: top center;
+  background-size: contain;
   background-repeat: no-repeat;
   /*background: linear-gradient(*/
   /*0.25turn,*/

@@ -5,7 +5,7 @@ import * as dat from 'dat.gui'
 
 //loading
 const textureLoader = new THREE.TextureLoader()
-const normalTexture = textureLoader.load('/textures/texture3.png')
+const normalTexture = textureLoader.load('/textures/map.png')
 
 // Debug this allows you to position things
 const gui = new dat.GUI()
@@ -17,7 +17,7 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 // Objects
-const geometry = new THREE.SphereBufferGeometry( 0.7, 64,  64 );
+const geometry = new THREE.BoxGeometry( 2, 1, 2 );
 
 
 // Materials
@@ -26,7 +26,7 @@ const material = new THREE.MeshStandardMaterial()
 material.metalness = 0.7
 material.roughness = 0.1
 material.normalMap = normalTexture;
-material.color = new THREE.Color(0x444444)
+material.color = new THREE.Color(0xffffff)
 
 // Mesh
 const sphere = new THREE.Mesh(geometry, material)
@@ -136,7 +136,7 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+const camera = new THREE.PerspectiveCamera(100, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
 camera.position.y = 0
 camera.position.z = 2
