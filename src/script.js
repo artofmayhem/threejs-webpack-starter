@@ -5,7 +5,7 @@ import * as dat from 'dat.gui'
 
 //loading
 const textureLoader = new THREE.TextureLoader()
-const normalTexture = textureLoader.load('/textures/map.png')
+const normalTexture = textureLoader.load('/textures/anywherelogo.png')
 
 // Debug this allows you to position things
 const gui = new dat.GUI()
@@ -24,19 +24,19 @@ const geometry = new THREE.BoxGeometry( 2.5, 1.25, .01 );
 
 const material = new THREE.MeshStandardMaterial()
 material.metalness = 0.7
-material.roughness = 0.4
+material.roughness = 0.5
 material.normalMap = normalTexture;
-material.color = new THREE.Color(0x444444)
+material.color = new THREE.Color(0x000000)
 
 // Mesh
-const sphere = new THREE.Mesh(geometry, material)
-scene.add(sphere)
+const Sphere = new THREE.Mesh(geometry, material)
+scene.add(Sphere)
 
 // Lights
 
-const pointLight = new THREE.PointLight(0x800080, 2)
-pointLight.position.set(9.19, -10.47, 5.79)
-pointLight.intensity = 1.5
+const pointLight = new THREE.PointLight(0xffae41, 2)
+pointLight.position.set(0.21, 1.18, 5.79)
+pointLight.intensity = 10
 scene.add(pointLight)
 const light1 = gui.addFolder('Red')
 
@@ -46,7 +46,7 @@ light1.add(pointLight.position, 'z').min(-11).max(11).step(0.01)
 light1.add(pointLight, 'intensity').min(0).max(10).step(0.01)
 
 const light1Color = {
-    color: 0x800880,
+    color: 0xffae41,
 }
 
 light1.addColor(light1Color, 'color')
@@ -60,7 +60,7 @@ light1.addColor(light1Color, 'color')
 //light 2
 const pointLight2 = new THREE.PointLight(0x800080, 2)
 pointLight2.position.set(2,3,8.7)
-pointLight2.intensity = 5
+pointLight2.intensity = 10
 scene.add(pointLight2)
 const light2 = gui.addFolder('Blue')
 
@@ -84,7 +84,7 @@ light2.addColor(light2Color, 'color')
 //light 3
 const pointLight3 = new THREE.PointLight(0xef0000, 2)
 pointLight3.position.set(-2, 3, 11)
-pointLight3.intensity = 1.5
+pointLight3.intensity = 10
 scene.add(pointLight3)
 const light3 = gui.addFolder('White')
 
@@ -136,10 +136,10 @@ window.addEventListener('resize', () =>
  * Camera
  */
 // Base camera
-const camera = new THREE.PerspectiveCamera(100, sizes.width / sizes.height, 0.1, 100)
+const camera = new THREE.PerspectiveCamera(90, sizes.width / sizes.height, 0.1, 100)
 camera.position.x = 0
-camera.position.y = -1.5
-camera.position.z = 2.5
+camera.position.y = -0.15
+camera.position.z = 1.75
 scene.add(camera)
 
 // Controls
@@ -174,7 +174,7 @@ function onDocumentMouseMove(e)  {
     mouseY = (e.clientY - windowHalfY)
 }
 const updateSphere =() => {
-sphere.position.y = window.scrollY * 0.005
+Sphere.position.y = window.scrollY * 0.005
 }
 window.addEventListener('scroll', updateSphere)
 
@@ -187,10 +187,10 @@ const tick = () =>
     targetY = mouseY * 0.001
     const elapsedTime = clock.getElapsedTime()
 
-    // Update objects
-    sphere.rotation.x +=  1 * (targetY - sphere.rotation.x)
-    sphere.rotation.y += 1 * (targetX - sphere.rotation.y)
-    // sphere.rotation.z = -0.002 * elapsedTime
+    // Update object
+    Sphere.rotation.x +=  1 * (targetY - Sphere.rotation.x)
+    Sphere.rotation.y += 1 * (targetX - Sphere.rotation.y)
+    // Sphere.rotation.z = -0.002 * elapsedTime
 
     // Update Orbital Controls
     // controls.update()

@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 
 }
 
@@ -31,7 +31,7 @@ body {
   color: white;
   display: flex;
   align-content: center;
-  flex-direction: column;
+  flex-flow: column wrap;
 }
 
 .webgl {
@@ -57,7 +57,7 @@ h1 {
   font-family: "Idlewild A", "Idlewild B";
   font-style: normal;
   font-weight: 200;
-  font-size: 15vh;
+  font-size: 2vh;
   text-transform: uppercase;
   color: white;
   align-self: center;
@@ -164,3 +164,21 @@ footer p {
     font-size: large;
     text-shadow: 0 0 3vh white;
 }
+
+.canvas-bg {
+  width: 80vw;
+  height: 70vh;
+  background-color: #000;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  flex-flow: row wrap;
+  margin-top: 10vh;
+  opacity: 0.9;
+  border: 1px solid #444;
+  box-shadow: 0 0 5vh #000;
+
+}
+
